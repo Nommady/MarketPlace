@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Estilos para a barra de navegação */
+        .navbar {
+            width: 1200px;
+            background-color: #F2F2F2; /* Cor de fundo da navbar */
+            overflow: hidden;
+            display: flex; /* Alinhar horizontalmente */
+            justify-content: space-between; /* Espaço entre os elementos */
+            align-items: center; /* Alinhar verticalmente */
+        }
+
+        /* Estilos para o logo */
+        .navbar-logo {
+            padding: 20px 0px; /* Espaçamento interno */
+            text-decoration: none; /* Remove sublinhado do link */
+            color: #9D9C9F; /* Cor do texto */
+            font-size: 26px; /* Tamanho da fonte */
+        }
+
+        /* Estilos para a barra de pesquisa */
+        .search-bar {
+            text-align: center; /* Alinha ao centro */
+            width: 50%; /* Largura da barra de pesquisa */
+        }
+
+        /* Estilos para o botão "Sign Up | Login" */
+        .sign-up-login-button {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #9D9C9F;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            width: 240px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 10px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .product-description {
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .product-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .product-rating {
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .star {
+            color: #f39c12;
+            font-size: 18px;
+            margin-right: 4px;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #f39c12;
+        }
+    </style>
+</head>
+<body>
+      <!-- Barra de navegação -->
+      <div class="navbar">
+        <!-- Logo -->
+        <a class="navbar-logo" href="#">Shoppie</a>
+        <!-- Barra de pesquisa -->
+        <div class="search-bar">
+            <input style="font-size: 16px; color:#9D9C9F; width: 100%; height: 30px; padding: 10px; border: none;" type="text" placeholder="Pesquisar...">
+        </div>
+
+        <!-- Botão "Sign Up | Login" -->
+        <a class="sign-up-login-button" href="#">Sign Up | Login</a>
+    </div>
+    <div id="cards-container" class="card-container">
+    </div>
+
+    <script>
+        // Dados do JSON (substitua pelo seu JSON real)
+        const produtos = [
+                  {
+                "nome": "Produto 1",
+                "descricao": "Descrição do Produto 1",
+                "avaliacao": 4.5,
+                "preco": 99.99,
+                "imagem": "https://lojavitrineofertas.com/cdn/shop/products/bluesoundr-fone-de-ouvido-bluetooth-50-fone-de-ouvido-bluetooth-50-deltino-pretovermelho-642823_500x_500x_664f4628-7d4e-4fd4-96f2-05e8c496b14d_800x.jpg?v=1690673941"
+            },
+            {
+                "nome": "Produto 2",
+                "descricao": "Descrição do Produto 2",
+                "avaliacao": 3.8,
+                "preco": 49.99,
+                "imagem": "https://lojavitrineofertas.com/cdn/shop/products/bluesoundr-fone-de-ouvido-bluetooth-50-fone-de-ouvido-bluetooth-50-deltino-pretovermelho-642823_500x_500x_664f4628-7d4e-4fd4-96f2-05e8c496b14d_800x.jpg?v=1690673941"
+            },
+            {
+                "nome": "Produto 3",
+                "descricao": "Descrição do Produto 3",
+                "avaliacao": 4.0,
+                "preco": 79.99,
+                "imagem": "https://lojavitrineofertas.com/cdn/shop/products/bluesoundr-fone-de-ouvido-bluetooth-50-fone-de-ouvido-bluetooth-50-deltino-pretovermelho-642823_500x_500x_664f4628-7d4e-4fd4-96f2-05e8c496b14d_800x.jpg?v=1690673941"
+            },
+            {
+                "nome": "Produto 1",
+                "descricao": "Descrição do Produto 1",
+                "avaliacao": 4.5,
+                "preco": 99.99,
+                "imagem": "https://lojavitrineofertas.com/cdn/shop/products/bluesoundr-fone-de-ouvido-bluetooth-50-fone-de-ouvido-bluetooth-50-deltino-pretovermelho-642823_500x_500x_664f4628-7d4e-4fd4-96f2-05e8c496b14d_800x.jpg?v=1690673941"
+            },
+            {
+                "nome": "Produto 2",
+                "descricao": "Descrição do Produto 2",
+                "avaliacao": 3.8,
+                "preco": 49.99,
+                "imagem": "https://lojavitrineofertas.com/cdn/shop/products/bluesoundr-fone-de-ouvido-bluetooth-50-fone-de-ouvido-bluetooth-50-deltino-pretovermelho-642823_500x_500x_664f4628-7d4e-4fd4-96f2-05e8c496b14d_800x.jpg?v=1690673941"
+            },
+            {
+                "nome": "Produto 3",
+                "descricao": "Descrição do Produto 3",
+                "avaliacao": 4.0,
+                "preco": 79.99,
+                "imagem": "https://lojavitrineofertas.com/cdn/shop/products/bluesoundr-fone-de-ouvido-bluetooth-50-fone-de-ouvido-bluetooth-50-deltino-pretovermelho-642823_500x_500x_664f4628-7d4e-4fd4-96f2-05e8c496b14d_800x.jpg?v=1690673941"
+            },
+            {
+                "nome": "Produto 1",
+                "descricao": "Descrição do Produto 1",
+                "avaliacao": 4.5,
+                "preco": 99.99,
+                "imagem": "https://lojavitrineofertas.com/cdn/shop/products/bluesoundr-fone-de-ouvido-bluetooth-50-fone-de-ouvido-bluetooth-50-deltino-pretovermelho-642823_500x_500x_664f4628-7d4e-4fd4-96f2-05e8c496b14d_800x.jpg?v=1690673941"
+            },
+            {
+                "nome": "Produto 2",
+                "descricao": "Descrição do Produto 2",
+                "avaliacao": 3.8,
+                "preco": 49.99,
+                "imagem": "https://lojavitrineofertas.com/cdn/shop/products/bluesoundr-fone-de-ouvido-bluetooth-50-fone-de-ouvido-bluetooth-50-deltino-pretovermelho-642823_500x_500x_664f4628-7d4e-4fd4-96f2-05e8c496b14d_800x.jpg?v=1690673941"
+            },
+            {
+                "nome": "Produto 3",
+                "descricao": "Descrição do Produto 3",
+                "avaliacao": 4.0,
+                "preco": 79.99,
+                "imagem": "https://lojavitrineofertas.com/cdn/shop/products/bluesoundr-fone-de-ouvido-bluetooth-50-fone-de-ouvido-bluetooth-50-deltino-pretovermelho-642823_500x_500x_664f4628-7d4e-4fd4-96f2-05e8c496b14d_800x.jpg?v=1690673941"
+            }
+        ];
+
+        // Função para criar um card HTML com base nos dados do produto
+        function criarCard(produto) {
+            const cardDiv = document.createElement("div");
+            cardDiv.className = "card";
+
+            const img = document.createElement("img");
+            img.src = produto.imagem;
+            img.alt = produto.nome;
+
+            const cardContentDiv = document.createElement("div");
+            cardContentDiv.className = "card-content";
+
+            const productNameDiv = document.createElement("div");
+            productNameDiv.className = "product-name";
+            productNameDiv.textContent = produto.nome;
+
+            const productDescriptionDiv = document.createElement("div");
+            productDescriptionDiv.className = "product-description";
+            productDescriptionDiv.textContent = produto.descricao;
+
+            const productInfoDiv = document.createElement("div");
+            productInfoDiv.className = "product-info";
+
+            const productRatingDiv = document.createElement("div");
+            productRatingDiv.className = "product-rating";
+            const ratingStars = "★".repeat(Math.round(produto.avaliacao)) + "☆".repeat(5 - Math.round(produto.avaliacao));
+            productRatingDiv.innerHTML = ratingStars;
+
+            const productPriceDiv = document.createElement("div");
+            productPriceDiv.className = "product-price";
+            productPriceDiv.textContent = `R$ ${produto.preco.toFixed(2)}`;
+
+            // Montar a estrutura do card
+            cardContentDiv.appendChild(productNameDiv);
+            cardContentDiv.appendChild(productDescriptionDiv);
+            productInfoDiv.appendChild(productRatingDiv);
+            productInfoDiv.appendChild(productPriceDiv);
+            cardContentDiv.appendChild(productInfoDiv);
+            cardDiv.appendChild(img);
+            cardDiv.appendChild(cardContentDiv);
+
+            return cardDiv;
+        }
+
+        // Função para adicionar os cards ao DOM
+        function adicionarCardsAoDOM() {
+            const cardsContainer = document.getElementById("cards-container");
+            let rowContainer = null;
+
+            produtos.forEach((produto, index) => {
+                if (index % 5 === 0) {
+                    // Crie um novo contêiner de linha a cada 5 cards
+                    rowContainer = document.createElement("div");
+                    rowContainer.className = "card-container";
+                    cardsContainer.appendChild(rowContainer);
+                }
+
+                const card = criarCard(produto);
+                rowContainer.appendChild(card);
+            });
+        }
+
+        // Chame a função para adicionar os cards ao DOM quando a página carregar
+        window.addEventListener("load", adicionarCardsAoDOM);
+    </script>
+</body>
+</html>

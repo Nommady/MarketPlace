@@ -1,0 +1,86 @@
+[
+    {
+        "nome": "Produto 1",
+        "descricao": "Descrição do Produto 1",
+        "avaliacao": 4.5,
+        "preco": 99.99,
+        "imagem": "imagem1.jpg"
+    },
+    {
+        "nome": "Produto 2",
+        "descricao": "Descrição do Produto 2",
+        "avaliacao": 3.8,
+        "preco": 49.99,
+        "imagem": "imagem2.jpg"
+    },
+    {
+        "nome": "Produto 3",
+        "descricao": "Descrição do Produto 3",
+        "avaliacao": 4.0,
+        "preco": 79.99,
+        "imagem": "imagem3.jpg"
+    },
+    {
+        "nome": "Produto 1",
+        "descricao": "Descrição do Produto 1",
+        "avaliacao": 4.5,
+        "preco": 99.99,
+        "imagem": "imagem1.jpg"
+    },
+    {
+        "nome": "Produto 2",
+        "descricao": "Descrição do Produto 2",
+        "avaliacao": 3.8,
+        "preco": 49.99,
+        "imagem": "imagem2.jpg"
+    },
+    {
+        "nome": "Produto 3",
+        "descricao": "Descrição do Produto 3",
+        "avaliacao": 4.0,
+        "preco": 79.99,
+        "imagem": "imagem3.jpg"
+    },
+    {
+        "nome": "Produto 1",
+        "descricao": "Descrição do Produto 1",
+        "avaliacao": 4.5,
+        "preco": 99.99,
+        "imagem": "imagem1.jpg"
+    },
+    {
+        "nome": "Produto 2",
+        "descricao": "Descrição do Produto 2",
+        "avaliacao": 3.8,
+        "preco": 49.99,
+        "imagem": "imagem2.jpg"
+    },
+    {
+        "nome": "Produto 3",
+        "descricao": "Descrição do Produto 3",
+        "avaliacao": 4.0,
+        "preco": 79.99,
+        "imagem": "imagem3.jpg"
+    },
+    {
+        "nome": "Produto 1",
+        "descricao": "Descrição do Produto 1",
+        "avaliacao": 4.5,
+        "preco": 99.99,
+        "imagem": "imagem1.jpg"
+    },
+    {
+        "nome": "Produto 2",
+        "descricao": "Descrição do Produto 2",
+        "avaliacao": 3.8,
+        "preco": 49.99,
+        "imagem": "imagem2.jpg"
+    },
+    {
+        "nome": "Produto 3",
+        "descricao": "Descrição do Produto 3",
+        "avaliacao": 4.0,
+        "preco": 79.99,
+        "imagem": "imagem3.jpg"
+    }
+]
